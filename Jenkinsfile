@@ -18,7 +18,7 @@ pipeline {
                 }
 
                 timeout(time: 3, unit:'MINUTES') {
-                sh 'echo "Doing health check, the deploy has not completed in 3 minutes.'
+                sh 'echo "Doing health check, the deploy has not completed in 3 minutes."'
                 }
             }  
         }
