@@ -11,13 +11,15 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'echo "deploying"'
-            }
-            retry(3) {
-                sh 'echo "retrying"'
-            }
-            timeout(time: 3, unit:'MINUTES') {
-                sh 'echo "Doing health check, the deploy has not completed in 3 minutes."'
-            }
+
+                retry(3) {
+                    sh 'echo "retrying"'
+                }
+
+                timeout(time: 3, unit:'MINUTES') {
+                sh 'echo "Doing health check, the deploy has not completed in 3 minutes.'
+                }
+            }  
         }
     }
 }
