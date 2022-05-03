@@ -9,7 +9,9 @@ pipeline {
     stages {
 
         stage('Test') {
-            echo "Test engine is ${TEST_ENGINE}"
+            steps {
+                echo "Test engine is ${TEST_ENGINE}"
+            }
         }
 
         stage('Build') {
