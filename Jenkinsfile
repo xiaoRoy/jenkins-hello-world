@@ -14,11 +14,12 @@ pipeline {
                 sh 'echo "deploying"'
 
                 retry(3) {
+                    //retry, once this step failed.
                     sh 'echo "retrying"'
                 }
 
                 timeout(time: 3, unit:'MINUTES') {
-                sh 'echo "Doing health check, the deploy has not completed in 3 minutes."'
+                sh 'echo "This should be done in 3 minutes otherwise it will be failed."'
                 }
             }  
         }
