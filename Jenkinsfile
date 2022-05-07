@@ -6,9 +6,11 @@ pipeline {
     }
 
     stages {
+
+
         stage('Test') {
             steps {
-                sh './gradlew check'
+                sh './gradlew check -Dorg.gradle.java.home=/Library/Java/JavaVirtualMachines/jdk-11.0.14.jdk/Contents/Home'
             }
         }
     }
