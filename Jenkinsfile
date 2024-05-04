@@ -1,22 +1,14 @@
 pipeline {
     agent any
-
-    environment {
-        TEST_ENGINE = 'JUnit'
-    }
-
     stages {
-
-
-        stage('Test') {
+        stage('Build') {
             steps {
-                sh './gradlew check -Dorg.gradle.java.home=/Library/Java/JavaVirtualMachines/jdk-11.0.14.jdk/Contents/Home'
+                sh 'echo "hello world"'
+                sh '''
+                 echo "Multiline shell steps works too"
+                    ls -lah
+                '''
             }
-        }
-    }
-    post {
-        always {
-            junit 'build/reports/**/*.xml'
         }
     }
 }
